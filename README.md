@@ -1,68 +1,69 @@
-# CodeIgniter 4 Application Starter
+🛒 Aplikasi Toko Sederhana (CodeIgniter 4)
 
-## What is CodeIgniter?
+Aplikasi web toko sederhana menggunakan CodeIgniter 4.
+Dibuat untuk memenuhi tugas kuliah Pemrograman Web Lanjut.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+✨ Fitur
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+# Login & Logout pengguna
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+# Role akses: admin & user
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+# Dashboard transaksi
 
-## Installation & updates
+# Kelola kategori produk
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+# Kelola produk (termasuk upload foto)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+# Transaksi pembelian
 
-## Setup
+# Riwayat transaksi pengguna
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+# Diskon otomatis
 
-## Important Change with index.php
+# Halaman profil
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+# API endpoint (/api) dengan API Key
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+⚙️ Cara Install
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Berikut langkah-langkah untuk menjalankan proyek ini:
 
-## Repository Management
+1. Clone repository:
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+   ```bash
+   https://github.com/chalidaaa/belajar-ci-tugas.git
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+   ```
 
-## Server Requirements
+2. composer install
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+3. php spark migrate
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+4. php spark db:seed UserSeeder
+   php spark db:seed ProductCategorySeeder.php
+   php spark db:seed ProductSeeder
+   php spark db:seed Diskon
 
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
+5. php spark serve
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+6. akses di http://localhost:8081/
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+   ```
+
+   ```
+
+📁 Struktur Folder
+bash
+Copy
+Edit
+app/ # Controller, Model, View
+public/ # Akses publik (CSS, JS, gambar)
+database/
+├─ Migrations # Struktur tabel
+└─ Seeds # Data awal
+writable/ # Log, cache, dll
+.env # Konfigurasi lingkungan
+
+Masih versi awal
+Silakan gunakan dan kembangkan sesuai kebutuhan.
