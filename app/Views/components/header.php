@@ -4,7 +4,7 @@
 <div class="d-flex align-items-center justify-content-between">
   <a href="index.html" class="logo d-flex align-items-center">
     <img src="<?= base_url()?>NiceAdmin/assets/img/logo.png" alt="">
-    <span class="d-none d-lg-block">Toko</span>
+    <span class="d-none d-lg-block">Shop</span>
   </a>
   <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
@@ -15,10 +15,12 @@
     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
   </form>
 </div><!-- End Search Bar -->
-
+ <li class="nav-item mx-auto" style="background-color: green; padding: 8px 16px; border-radius: 4px;">
+      <span style="color: yellow; font-weight: bold;">Diskon Hari ini RP.<?= number_format(session()->get('diskon'), 0, ',', '.'); ?> per item</span>
+    </li>
 <nav class="header-nav ms-auto">
   <ul class="d-flex align-items-center">
-
+  
     <li class="nav-item d-block d-lg-none">
       <a class="nav-link nav-icon search-bar-toggle " href="#">
         <i class="bi bi-search"></i>
@@ -225,5 +227,4 @@
   </ul>
 </nav><!-- End Icons Navigation -->
 
-</header>
-<!-- End Header -->
+</header><!-- End Header -->

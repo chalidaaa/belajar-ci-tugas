@@ -6,18 +6,22 @@ use CodeIgniter\Database\Seeder;
 
 class ProductCategorySeeder extends Seeder
 {
-    public function run()
-    {
-        $data = [
-            ['kategori' => 'Laptop', 'created_at' => date("Y-m-d H:i:s")],
-            ['kategori' => 'Smartphone', 'created_at' => date("Y-m-d H:i:s")],
-            ['kategori' => 'Alat Tulis', 'created_at' => date("Y-m-d H:i:s")],
-            ['kategori' => 'Buku', 'created_at' => date("Y-m-d H:i:s")],
-            ['kategori' => 'Elektronik', 'created_at' => date("Y-m-d H:i:s")],
-        ];
+public function run()
+{
+    $categories = [
+        ['name' => 'Laptop', 'description' => 'Laptop Gaming dan Non-Gaming'],
+        ['name' => 'Printer', 'description' => 'Printer Epson, HP, Canon, dll'],
+    ];
 
-        foreach ($data as $item) {
-            $this->db->table('product_category')->insert($item);
-        }
+    $products = $this->db->table('produks')->select('id')->get()->getResult();
+
+    foreach ($products as $product) {
+        $randomIndex = array_rand($categories);
+        $this->db->table('product_category')->insert([
+            'name' => $categories[$randomIndex]['name'],
+            'description' => $categories[$randomIndex]['description'],
+            'id' => $product->id, // <-- jika foreign key
+        ]);
     }
+}
 }

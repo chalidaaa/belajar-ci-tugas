@@ -11,7 +11,7 @@
         </li><!-- End Home Nav -->
 
         <li class="nav-item">
-            <a class="nav-link <?php echo (uri_string() == 'keranjang') ? "" : "collapsed" ?>" href="keranjang">
+            <a class="nav-link <?php echo (uri_string() == 'keranjang') ? "" : "collapsed" ?>" href="/keranjang">
                 <i class="bi bi-cart-check"></i>
                 <span>Keranjang</span>
             </a>
@@ -20,25 +20,42 @@
         if (session()->get('role') == 'admin') {
         ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo (uri_string() == 'produk') ? "" : "collapsed" ?>" href="produk">
+                <a class="nav-link <?php echo (uri_string() == 'produk') ? "" : "collapsed" ?>" href="/produk">
                     <i class="bi bi-receipt"></i>
                     <span>Produk</span>
                 </a>
-            </li><!-- End Product Nav -->
-            <a class="nav-link <?= (uri_string() == 'kategori-produk') ? '' : 'collapsed' ?>" href="/kategori-produk">
-                <i class="bi bi-tags"></i>
-                <span>Kategori Produk</span>
-            </a>
-            <!-- End Product Category Nav -->
-            <li class="nav-item"></li>
-            <a class="nav-link <?php echo (uri_string() == 'faq') ? "" : "collapsed" ?>" href="faq">
-                <i class="bi bi-question-circle"></i>
-                <span>F.A.Q</span>
-            </a>
-            </li>
+            </li><!-- End Produk Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link <?php echo (uri_string() == 'diskon') ? "" : "collapsed" ?>" href="/diskon">
+                    <i class="bi bi-receipt"></i>
+                    <span>Diskon</span>
+                </a>
+            </li><!-- End Produk Nav -->
+
+
         <?php
         }
         ?>
+            <li class="nav-item">
+                <a class="nav-link <?php echo (uri_string() == 'profile') ? "" : "collapsed" ?>" href="profile">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </a>
+            </li><!-- End Profile Nav -->
+            <li class="nav-item">
+                <a class="nav-link <?php echo (uri_string() == 'kategori produk') ? "" : "collapsed" ?>" href="/kategoriproduk">
+                    <i class="bi bi-receipt"></i>
+                    <span>Kategori Produk</span>
+                </a>
+            </li><!-- End Produk Nav -->
+
+            <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == 'faq') ? "" : "collapsed" ?>" href="/faq">
+                <i class="bi bi-question"></i>
+                <span>F.A.Q</span>
+            </a>
+        </li><!-- End Keranjang Nav -->
     </ul>
 
 </aside><!-- End Sidebar-->
